@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ren.iming.model">
+    <class name="User" table="User">
+        <id name="account"></id>
+        <property name="password"/>
+        <property name="iQiYiTime" type="long"/>
+        <property name="xunLeiTime" type="long"/>
+        <property name="holdIQiYi" type="boolean"/>
+        <property name="holdXunLei" type="boolean"/>
+    </class>
+
+</hibernate-mapping>

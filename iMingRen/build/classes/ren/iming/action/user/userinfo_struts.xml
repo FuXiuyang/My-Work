@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="user" namespace="/" extends="struts-default">
+        <action name="UserInfo" class="ren.iming.action.user.UserInfoAction" method="userInfo">
+        	<result name="success">/WEB-INF/view/user_info/user_info.jsp</result>
+        	<result name="error" type="redirect">view/error/error.jsp</result>
+        </action>
+        <action name="ViewDeal" class="ren.iming.action.user.UserInfoAction" method="viewDeal">
+        	<result name="success">/WEB-INF/view/user_info/deal_detail.jsp</result>
+        	<result name="error" type="redirect">view/error/error.jsp</result>
+        </action>
+        <action name="ModifyPassword" class="ren.iming.action.user.UserInfoAction" method="modifyPassword">
+        	<result name="success">/WEB-INF/view/user_info/modify_password.jsp</result>
+        	<result name="error" type="redirect">view/error/error.jsp</result>
+        </action>
+    </package>
+</struts>

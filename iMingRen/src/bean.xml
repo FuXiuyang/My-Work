@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+      
+    <!-- spring的属性加载器，加载properties文件中的属性 -->  
+	<bean  class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+	    <property name="locations">  
+	    	<list>
+	    		<!-- 设置服务器各种服务的缓存数量 -->
+	    		<value>classpath:serviceNum.properties</value> 
+	    		<!-- 设置重置密码时网站元素id等信息的配置 --> 
+	        	<value>classpath:resetPassword.properties</value> 
+	    	</list>
+	    </property>  
+	    <property name="fileEncoding" value="utf-8" />  
+	</bean>         
+    <!-- =======================================model专区开始 =================================-->
+    <!-- 配置订单详情类 -->
+    <bean id="deal" class="ren.iming.model.Deal">
+    
+    </bean>
+    <!-- 异常的会员账号 -->
+    <bean id="eVIPAccount" class="ren.iming.model.EVIPAccount">
+    
+    </bean>
+    <!-- 配置用户类 -->
+	<bean id="user" class="ren.iming.model.User">
+		
+	</bean>
+	
+	<!-- 设置Token类 -->
+	<bean id="token" class="ren.iming.model.Token">
+	
+	</bean> 
+	<!--========================================== model专区结束============================== -->
+	
+	<!-- =======================================DAO专区开始 =================================-->
+	<bean id="eVIPAccountDAO" class="ren.iming.DAO.EVIPAccountDAO">
+	
+	</bean>
+	<!-- =======================================DAO专区结束 =================================-->
+	
+	<!-- ====================================service专区开始  =====================================-->
+	<!-- 配置DealService的缓存个数,我这默认设置为15个 -->
+	<bean id="dealServiceNum" class="ren.iming.service.CookieNum">
+		<!-- 设置缓存数量为15个 -->
+		<property name="num" value="${dealServiceNum}"></property>
+	</bean>
+	
+	<!-- 配置DealServiceFactory的服务类,里面预先提供了一些已创建好的对象,方便服务器调用 -->
+	<bean id="dealServiceFactory" class="ren.iming.service.DealServiceFactory" factory-method="getInstance">
+		
+	</bean>
+	
+	<!-- 配置TokenService类 -->
+	<bean id="tokenService" class="ren.iming.service.TokenService">
+		
+	</bean>
+	<!-- 配置UserService的缓存个数,我这默认设置为15个 -->
+	<bean id="userServiceNum" class="ren.iming.service.CookieNum">
+		<!-- 设置迅雷会员工厂类中提前声明15个对象,放在工厂类里,工服务器端调用 -->
+		<property name="num" value="${userServiceNum}"></property>
+	</bean>
+	<!-- 配置UserServiceFactory工厂类,里面设置了很多缓存,方便服务器调用 -->
+	<bean id="userServiceFactory" class="ren.iming.service.UserServiceFactory" factory-method="getInstance">
+		
+	</bean>
+	
+	<!-- 配置iQiYiVIPService的缓存个数,我这默认设置为15个 -->
+	<bean id="iQiYiVIPServiceNum" class="ren.iming.service.CookieNum">
+		<!-- 设置爱奇艺会员工厂类中提前声明15个对象,放在工厂类里,工服务器端调用 -->
+		<property name="num" value="${iQiYiServiceNum}"></property>
+	</bean>
+	<!-- 爱奇艺队列,即就是将所有可用的会员账号,放进该队列中 -->
+	<bean id="iQiYiVIPQueue" class="ren.iming.service.IQiYiVIPQueue" factory-method="getInstance">
+		
+	</bean>
+	<!-- 爱奇艺提供服务的工厂类IQiYiVIPServiceFactory,提供爱奇艺会员服务缓存,供服务器端调用 -->
+	<bean id="iQiYiVIPServiceFactory" class="ren.iming.service.IQiYiVIPServiceFactory" factory-method="getInstance">
+		
+	</bean>
+	
+	<!-- 时间队列,即将所有被申请的会员账号按照结束时间的先后顺序放进该队列中 -->
+	<bean id="timeQueue" class="ren.iming.service.TimeQueue" factory-method="getInstance">
+	
+	</bean>
+	<!-- 时间TimeService 用来监听并且修改时间队列中已经到时间的VIP账号-->
+	<bean id="timeService" class="ren.iming.service.TimeService" dependency-check="objects">
+		<property name="timeQueue"><ref bean="timeQueue"/></property>
+		<property name="eVipDao"><ref bean="eVIPAccountDAO"/></property>
+		<property name="eVip"><ref bean="eVIPAccount"/></property>
+		<property name="resetPasswordService"><ref bean="iQiYiResetPasswordService"/></property>
+	</bean>
+	<!-- 线程Thread 为TimeService时间服务提供多线程 -->
+	<bean id="threadTimeService" class="java.lang.Thread">
+		<constructor-arg >
+			<ref bean="timeService"/>
+		</constructor-arg>
+	</bean>
+	
+	<!-- 配置VIPInfoService的缓存个数,我这默认设置为15个 -->
+	<bean id="vipInfoServiceNum" class="ren.iming.service.CookieNum">
+		<!-- 设置会员信息工厂类中提前声明15个对象,放在工厂类里,工服务器端调用 -->
+		<property name="num" value="${vipInfoServiceNum}"></property>
+	</bean>
+	<!-- 提供服务的工厂类VIPInfoServiceFactory,提供会员信息服务缓存,供服务器端调用 -->
+	<bean id="vipInfoServiceFactory" class="ren.iming.service.VIPInfoServiceFactory" factory-method="getInstance">
+		
+	</bean>
+	
+	<!-- 配置xunLeiVIPService的缓存个数,我这默认设置为15个 -->
+	<bean id="xunLeiVIPServiceNum" class="ren.iming.service.CookieNum">
+		<!-- 设置迅雷会员工厂类中提前声明15个对象,放在工厂类里,工服务器端调用 -->
+		<property name="num" value="${xunLeiServiceNum}"></property>
+	</bean>
+	<!-- 迅雷队列,即就是将所有可用的会员账号,放进该队列中 -->
+	<bean id="xunLeiVIPQueue" class="ren.iming.service.XunLeiVIPQueue" factory-method="getInstance">
+		
+	</bean>
+	<!-- 提供服务的工厂类XunLeiVIPServiceFactory,提供迅雷会员服务缓存,供服务器端调用 -->
+	<bean id="xunLeiVIPServiceFactory" class="ren.iming.service.XunLeiVIPServiceFactory" factory-method="getInstance">
+		
+	</bean>
+	
+	<!-- ==============================service专区结束  =====================================-->
+	
+	<!-- ==============================reset-password专区开始 ==============================-->
+	<!-- 系统自动生成随机密码 -->
+	<bean id="password" class="ren.iming.reset.password.Password">
+		<!-- 设置生成随机密码的长度 -->
+		<property name="passwordNum" value="${passwordNum}"></property>
+	</bean>
+	<!-- 配置的爱奇艺修改密码的界面中密码填写内容区域id号 -->
+	<bean id="iQiYiAutoWeb" class="ren.iming.reset.password.AutoWeb" lazy-init="true">
+		<property name="setPwId" value="${iQiYi.setPwId}"></property>
+		<property name="resetPwId" value="${iQiYi.resetPwId}"></property>
+		<property name="submitId" value="${iQiYi.submitId}"></property>
+	</bean>
+	<!-- 配置请求爱奇艺发送修改密码的连接请求 -->
+	<bean id="iQiYiRequest" class="ren.iming.reset.password.HttpRequest" lazy-init="true">
+		<property name="urlStart" value="${iQiYi.urlStart}"></property>
+		<property name="urlEnd" value="${iQiYi.urlEnd}"></property>
+	</bean>
+	<!-- 配置爱奇艺重置密码类,这里是对上面配置的整合,最终实现改密功能 -->
+	<bean id="iQiYiResetPasswordService" class="ren.iming.reset.password.ResetPasswordService" dependency-check="objects">
+		<property name="newPassword"><ref bean="password"/></property>
+		<property name="autoWeb"><ref bean="iQiYiAutoWeb"/></property>
+		<property name="request"><ref bean="iQiYiRequest"/></property>
+		<property name="senderAddress" value="${iQiYi.senderAddress}"></property>
+		<property name="pattern" value="${iQiYi.pattern}"></property>
+		<property name="sleepTime" value="${iQiYi.sleepTime}"></property>
+	</bean>
+	<!-- =============================reset-password专区结束 ==============================-->
+
+</beans>

@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.example.silence"
+    android:id="@+id/timewhile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="10sp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/addstarthour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/settimecolor"
+            android:src="@drawable/addtime" />
+
+        <TextView
+            android:layout_width="30sp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/addstartminute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/settimecolor"
+            android:src="@drawable/addtime" />
+
+        <TextView
+            android:layout_width="90sp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/addstophour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="@color/settimecolor"
+            android:src="@drawable/addtime" />
+
+        <TextView
+            android:layout_width="35sp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/addstopminute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/settimecolor"
+            android:src="@drawable/addtime" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/starthour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/starttimehour"
+            android:textColor="@color/settimecolor"
+            android:textSize="@dimen/settimesize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/time_sign"
+            android:textColor="@color/settimecolor"
+            android:textSize="@dimen/settimesize" />
+
+        <TextView
+            android:id="@+id/startminute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/starttimeminute"
+            android:textColor="@color/settimecolor"
+            android:textSize="@dimen/settimesize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sign"
+            android:textColor="@color/settimecolor"
+            android:textSize="@dimen/settimesize"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/stophour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/stoptimehour"
+            android:textColor="@color/settimecolor"
+            android:textSize="@dimen/settimesize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/time_sign"
+            android:textColor="@color/settimecolor"
+            android:textSize="@dimen/settimesize" />
+
+        <TextView
+            android:id="@+id/stopminute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/stoptimeminute"
+            android:textColor="@color/settimecolor"
+            android:textSize="@dimen/settimesize" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="10sp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/substarthour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/settimecolor"
+            android:src="@drawable/subtime" />
+
+        <TextView
+            android:layout_width="30sp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/substartminute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/settimecolor"
+            android:src="@drawable/subtime" />
+
+        <TextView
+            android:layout_width="90sp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/substophour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/settimecolor"
+            android:src="@drawable/subtime" />
+
+        <TextView
+            android:layout_width="35sp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/substopminute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/settimecolor"
+            android:src="@drawable/subtime" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/drawline"
+        android:textSize="@dimen/linesize" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55sp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+       <TextView
+            android:layout_width="3sp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重复"
+            android:textSize="23sp" />
+        <TextView
+            android:layout_width="5sp"
+            android:layout_height="wrap_content" />
+		<LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="32sp"
+        android:orientation="horizontal">
+        <com.example.circlebutton.Circle
+            android:id="@+id/c1"
+            app:name="1"
+            android:layout_width="32sp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="5sp"
+            android:layout_height="wrap_content" />
+        <com.example.circlebutton.Circle
+            android:id="@+id/c2"
+            android:layout_width="32sp"
+            android:layout_height="wrap_content"
+            app:name="2" />
+        <TextView
+            android:layout_width="5sp"
+            android:layout_height="wrap_content" />
+        <com.example.circlebutton.Circle
+            android:id="@+id/c3"
+            android:layout_width="32sp"
+            android:layout_height="wrap_content"
+            app:name="3" />
+        <TextView
+            android:layout_width="5sp"
+            android:layout_height="wrap_content" />
+        <com.example.circlebutton.Circle
+            android:id="@+id/c4"
+            android:layout_width="32sp"
+            android:layout_height="wrap_content"
+            app:name="4" />
+        <TextView
+            android:layout_width="5sp"
+            android:layout_height="wrap_content" />
+        <com.example.circlebutton.Circle
+            android:id="@+id/c5"
+            android:layout_width="32sp"
+            android:layout_height="wrap_content"
+            app:name="5" />
+        <TextView
+            android:layout_width="5sp"
+            android:layout_height="wrap_content" />
+        <com.example.circlebutton.Circle
+            android:id="@+id/c6"
+            android:layout_width="32sp"
+            android:layout_height="wrap_content"
+            app:name="6" />
+        <TextView
+            android:layout_width="5sp"
+            android:layout_height="wrap_content" />
+        <com.example.circlebutton.Circle
+            android:id="@+id/c7"
+            android:layout_width="32sp"
+            android:layout_height="wrap_content"
+            app:name="7" />
+        </LinearLayout>
+
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/drawline"
+        android:textSize="@dimen/linesize" />
+    <LinearLayout
+        android:id="@+id/biaoqian"
+        android:layout_width="match_parent"
+        android:layout_height="55sp"
+        android:orientation="vertical"
+        android:gravity="center_vertical" >
+        <TextView
+          	android:id="@+id/textView2"
+            android:layout_width="56sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="标签" 
+            android:textSize="23sp"/>
+
+        <TextView
+            android:id="@+id/setitem"
+            android:layout_width="40sp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/offline"
+            android:gravity="center"
+            android:text="上课" />
+
+           
+     </LinearLayout>
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/drawline"
+        android:textSize="@dimen/linesize" />
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55sp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical" >
+        <TextView
+         	android:id="@+id/textView4"
+            android:layout_width="105sp"
+            android:layout_height="wrap_content"
+            android:text="发送短信"
+            android:textSize="23sp" 
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="140sp"
+            android:layout_height="wrap_content" />
+		<RelativeLayout
+		    android:layout_width="wrap_content"
+        	android:layout_height="27sp" >
+        <com.example.circlebutton.CircleButton
+            android:id="@+id/cb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:height="26dp"
+        	app:width="25dp" />
+        </RelativeLayout> 
+      </LinearLayout>
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/drawline"
+        android:textSize="@dimen/linesize" />
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55sp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:text="节假日不静音"
+            android:textSize="23sp" 
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="95sp"
+            android:layout_height="wrap_content" />
+		<RelativeLayout
+		    android:layout_width="wrap_content"
+        	android:layout_height="27sp" >
+        <com.example.circlebutton.CircleButton
+            android:id="@+id/cb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:height="26dp"
+        	app:width="25dp" />  
+        </RelativeLayout>        
+      </LinearLayout>
+      <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/drawline"
+        android:textSize="@dimen/linesize" />
+	<RelativeLayout 
+	        android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+		<LinearLayout 
+		    android:id="@+id/ll"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:layout_alignParentRight="true"
+		    android:orientation="horizontal"
+		    >
+
+		    <Button
+		    android:id="@+id/save"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:background="@drawable/shape"
+		    android:text="保存"
+		    android:textColor="@color/saveword" />
+
+		    <Button
+		    android:id="@+id/delete"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:background="@drawable/shape"
+		    android:text="删除"
+		    android:textColor="@color/saveword" />
+		</LinearLayout>
+		    
+	</RelativeLayout>
+
+</LinearLayout>

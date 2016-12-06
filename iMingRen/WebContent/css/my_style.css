@@ -1,0 +1,73 @@
+
+	    body{
+	    	background-color: #EFEFEF;
+	    }
+    	.col-md-2{
+    		background-color: #FFFF00;
+    	}
+    	/*header is start*/
+    	.motto{
+    		padding-top: 0.2em;
+    		font-size: x-large;
+    	}
+    	.mynavbar{
+    		background-color: white;
+    	}
+    	#logo_img{
+			width: 10em;
+			margin-top: 0.2em; 
+			margin-left: 2em;
+		}
+		.header-text{
+			margin-top: 1em;
+		}
+    	/*header is end*/
+    	.tm-main-content {
+			margin: 10em 25em;
+			padding-left: 2.5em;
+		}
+    	.tm-content-box {
+    		height: 500px;
+			background-color: white;
+			margin-bottom: 2.5em;
+		}
+    	.tm-banner {
+/*			height: 370px;*/
+			
+			padding: 2.5em;
+		}
+			
+		.tm-banner-inner {
+			border: 1px solid #999;
+			margin: 0;
+			height: 100%;
+			padding: 2.5em;
+			text-align: center;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+		    -webkit-box-orient: vertical;
+		    -webkit-box-direction: normal;
+		    -webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		    flex-direction: column;
+		    -webkit-box-align: center;
+		    -webkit-align-items: center;
+		    -ms-flex-align: center;
+		    align-items: center;
+		    -webkit-box-pack: center;
+		    -webkit-justify-content: center;
+		    -ms-flex-pack: center;
+		    justify-content: center;
+		}
+		.text-style{
+			color: #FF0000;
+			padding: 0.3em;
+		}
+		
+		.money{
+			color: #FF0000;
+			font-size: 2em;
+		}
+		

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="buy" namespace="/" extends="struts-default">
+	    <interceptors> <!-- //配置拦截器   -->
+	        <interceptor-stack name="tokenStack"> <!-- 命名拦截器栈，名字随便   -->
+	            <interceptor-ref name="token"/> <!-- 此拦截器为token拦截器，struts已经实现   -->
+	            <interceptor-ref name="defaultStack" /> <!-- 默认拦截器，注意顺序，默认拦截器放在最下面   -->
+	        </interceptor-stack>  
+	    </interceptors>  
+	           
+	    <default-interceptor-ref name="tokenStack" /> <!-- //\\让该包中所有action都是用我们配置的拦截器栈，名字和上面的对应   -->
+	    
+        <action name="BuyAction" class="ren.iming.action.work.BuyAction">
+        	<result name="login" type="redirect">/view/login/login.jsp</result>
+        	<!-- <result name="success">/WEB-INF/view/pay/pay.jsp</result> -->
+        	<!-- 这里应该设置禁止表单重复提交,要不然花一份钱,就可以把会员全部领光了 -->
+        	<result name="success">/WEB-INF/view/result/result.jsp</result>
+        	<result name="error">index.jsp</result>
+        	<result name="invalid.token">index.jsp</result> 
+        </action>
+    </package>
+</struts>

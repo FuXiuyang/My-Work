@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="settimecolor">#00ff00</color>
+    <color name="offline">#808080</color>
+    <color name="online">#000000</color>
+    <color name="saveback">#ffffff</color>
+    <color name="saveword">#ff0000</color>
+    
+</resources>

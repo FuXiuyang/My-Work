@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<include file="ren/iming/action/login/register_struts.xml"></include>
+	<include file="ren/iming/action/login/login_struts.xml"></include>
+	<include file="ren/iming/action/login/logout_struts.xml"></include>
+	<include file="ren/iming/action/login/forgetpassword_struts.xml"></include>
+	<include file="ren/iming/action/user/userinfo_struts.xml"></include>
+	<include file="ren/iming/action/user/modifypassword_struts.xml"></include>
+	<include file="ren/iming/action/work/buy_struts.xml"></include>
+</struts>

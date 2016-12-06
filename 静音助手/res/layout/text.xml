@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.example.silence"
+    android:id="@+id/text"
+    android:layout_width="match_parent"
+    android:layout_height="60sp" >
+
+    <TextView
+        android:id="@+id/starttimehour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/starttimehour"
+        android:textSize="@dimen/maintextsize" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/starttimehour"
+        android:layout_alignBottom="@+id/starttimehour"
+        android:layout_toRightOf="@+id/starttimehour"
+        android:text=":"
+        android:textSize="@dimen/maintextsize" />
+
+    <TextView
+        android:id="@+id/starttimeminute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_toRightOf="@+id/textView4"
+        android:text="@string/starttimeminute"
+        android:textSize="@dimen/maintextsize" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="20sp"
+        android:layout_alignBottom="@+id/starttimeminute"
+        android:layout_toRightOf="@+id/starttimeminute"
+        android:gravity="bottom"
+        android:text="@string/sign"
+        android:textSize="@dimen/maintextsize" />
+
+    <TextView
+        android:id="@+id/item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignTop="@+id/starttimeminute"
+        android:gravity="center"
+        android:text="上课"
+        android:textColorHint="@color/offline" />
+
+    <TextView
+        android:id="@+id/stoptimehour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/item"
+        android:layout_toRightOf="@+id/textView2"
+        android:text="@string/stoptimehour"
+        android:textSize="@dimen/maintextsize" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/stoptimehour"
+        android:layout_alignBottom="@+id/stoptimehour"
+        android:layout_toRightOf="@+id/stoptimehour"
+        android:text=":"
+        android:textSize="@dimen/maintextsize" />
+
+    <TextView
+        android:id="@+id/stoptimeminute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="@string/stoptimeminute"
+        android:textSize="@dimen/maintextsize" />
+
+    <com.example.circlebutton.CircleButton
+        android:id="@+id/cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/stoptimeminute"
+        android:layout_marginTop="25sp"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/stoptimeminute"
+        app:height="26dp"
+        app:width="25dp" />
+
+</RelativeLayout>

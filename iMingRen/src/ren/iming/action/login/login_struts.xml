@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="login" namespace="/" extends="struts-default">
+    	<!-- 设置cookie拦截器 -->
+    	<!-- <action name="LoginAction" class="ren.iming.action.login.LoginAction">
+		    <interceptor-ref name="defaultStack" />
+		    <interceptor-ref name="cookie">
+		        <param name="cookiesName">account</param>
+		        <param name="cookiesValue">*</param>
+		    </interceptor-ref>
+		</action> -->
+		<!-- 设置登陆的Action -->
+        <action name="LoginAction" class="ren.iming.action.login.LoginAction" method="login">
+        	<result name="success" type="redirect">index.jsp</result>
+        	<result name="error" type="redirect">view/error/error.jsp</result>
+        </action>
+    </package>
+</struts>

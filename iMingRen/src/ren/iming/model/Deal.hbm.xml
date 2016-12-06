@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ren.iming.model">
+    <class name="Deal" table="Deal">
+        <id name="id">
+        	<generator class="identity"/>
+        </id>
+        <property name="deal_time" type="timestamp"/>
+        <property name="sum"/>
+        <property name="user_account"/>
+        <property name="vip_account"/>
+        <property name="vip_password"/>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,85 @@
+		@media only screen and (max-width: 768px) {
+			.col-xs-12{
+				width: 100%;
+			}
+		}
+		@media only screen and (min-width: 768px) {
+			.left-1{
+				left:10%;
+			}
+			.left-2{
+				left:12%;
+			}
+			.left-3{
+				left: 25%;
+			}
+			.left-4{
+				left: 34%;
+			}
+			.left-6{
+				left:50%;
+			}
+			.col-sm-1{
+				width:10%;
+			}
+			.col-sm-2{
+				width:17%;
+				float: left;
+			}
+			.col-sm-3{
+				width:25%;
+			}
+			.col-sm-4{
+				width:34%;
+			}
+			.col-sm-5{
+				width:41%;
+			}
+			.col-sm-6{
+				width:50%;
+			}
+			.col-lg-7{
+				width:45%;
+			}
+			/*澶撮儴寮�濮�*/
+			/*.nav-box{
+				margin-right: 20em;
+			}*/
+			.nav{
+				margin-top: 1.5em;
+			}
+			.nav li{
+				display: inline;
+			}
+			.nav li a{
+				display: inline;
+			}
+			img{
+				display: inline;
+			}
+			.navbar-right{
+				float: right;
+				position: relative;
+				right: 25%;
+			}
+			
+			/*澶撮儴缁撴潫*/
+			/*涓棿鍐呭閮ㄥ垎寮�濮�*/
+			.form-group label{
+				clear: left;
+				padding: 0.5em;
+				text-align: right;
+				float: left;
+			}
+			.form-group div{
+				float: left;
+			}
+			.form-group p{
+				float: left;
+			}
+			.form-control{
+				display: inline;
+			}
+			/*涓棿鍐呭閮ㄥ垎缁撴潫*/
+			
+		}

@@ -1,0 +1,1 @@
+Create table User(account char(15) primary key not null,password char(15) not null,iqiyitime long,xunleitime long);
